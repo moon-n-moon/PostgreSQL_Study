@@ -1,0 +1,44 @@
+CREATE DATABASE community_board;
+
+CREATE TABLE users(
+	user_pk INTEGER,
+	user_id VARCHAR(80),
+	user_pw VARCHAR(12),
+	register_date DATE
+);
+
+
+CREATE TABLE board(
+	board_pk INTEGER,
+	board_user INTEGER,
+	register_date DATE,
+	title VARCHAR(30),
+	description VARCHAR(3000),
+	likes INTEGER,
+	image_name VARCHAR(50)
+);
+
+INSERT INTO users (user_pk ,user_id, user_pw, register_date) VALUES
+(1, 'Carveinus', 'car1234', '2020/04/23'),
+(2, 'Jenna', 'kk3375', '2020/07/12'),
+(3, 'Wlfur', 'fur0022', '2020/08/31');
+
+INSERT INTO board (board_pk ,title, description, image_name, register_date, board_user) VALUES
+(1, 'Developer''s essay', 'Perhaps...', ' ', '2020/05/02', 1),
+(2, 'Why the earth is round', 'I took a...', 'er.png', '2020/09/28', 3),
+(3, 'Coffee time', 'I had a...', 'coffee.jpeg', '2020/07/13', 2),
+(4, 'Chicken is inefficient', 'This is...', ' ', '2020/08/14', 2),
+(5, 'When bothering', 'Let''s...', ' ', '2020/06/22', 1);
+
+SELECT title, description FROM board
+ORDER BY register_date ASC
+LIMIT 3;
+
+UPDATE users
+SET user_pw = 'car4321'
+WHERE user_pk = 1
+RETURNING *;
+
+DELETE FROM board
+WHERE board_pk = 5
+RETURNING *;
