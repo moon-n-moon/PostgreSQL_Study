@@ -1,0 +1,60 @@
+SELECT * FROM develop_book;
+
+SELECT book_id, name FROM develop_book;
+
+SELECT * FROM develop_book
+LIMIT 5;
+
+SELECT * FROM develop_book
+LIMIT 6
+OFFSET 1;
+
+SELECT * FROM develop_book
+ORDER BY book_id ASC;
+
+SELECT * FROM develop_book
+ORDER BY book_id DESC;
+
+SELECT * FROM develop_book
+ORDER BY date, name;
+
+SELECT date, name FROM develop_book
+ORDER BY 2, 1;
+
+SELECT * FROM develop_book
+WHERE book_id = 1;
+
+SELECT * FROM develop_book
+WHERE book_id <> 1;
+
+SELECT * FROM develop_book
+WHERE book_id >3;
+
+SELECT * FROM develop_book
+WHERE book_id >=3;
+
+SELECT * FROM develop_book
+WHERE '2020-01-03' = (
+SELECT date FROM develop_book
+WHERE book_id = 3
+);
+
+UPDATE develop_book
+SET name ='Java'
+WHERE  book_id = 2
+RETURNING *;
+
+UPDATE develop_book
+SET name = 'C'
+WHERE book_id =5
+RETURNING * ;
+
+UPDATE develop_book
+SET name = 'C++'
+WHERE book_id = 6
+RETURNING * ;
+
+UPDATE develop_book
+SET name = 'Go'
+WHERE book_id = 8
+RETURNING *;

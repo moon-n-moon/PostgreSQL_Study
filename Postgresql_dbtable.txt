@@ -1,0 +1,25 @@
+CREATE DATABASE book_store;
+
+CREATE TABLE develop_book (
+	book_id INTEGER,
+	date DATE,
+	name VARCHAR(80)
+);
+
+INSERT INTO develop_book VALUES(1, '2019-12-17', '맛있는 MongoDB');
+
+INSERT INTO develop_book VALUES(2, '2019-12-25', '''자바''');
+
+INSERT INTO develop_book (book_id, date, name) VALUES
+(3, '2020-01-03', 'HTML/CSS');
+
+INSERT INTO develop_book VALUES
+(4, '2020-01-24', 'Python'),
+(5, '2020-02-04', 'C언어'),
+(6, '2020-02-15', 'C++언어'),
+(7, '2020-03-10', 'mySQL'),
+(8, '2020-04-01', 'Go언어'),
+(9, '2020-04-07', 'PHP'),
+(10, '2020-04-17', 'Ruby');
+
+
