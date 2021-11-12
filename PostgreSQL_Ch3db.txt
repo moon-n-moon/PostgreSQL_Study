@@ -1,0 +1,23 @@
+CREATE TABLE develop_book (
+	book_id NUMERIC(6),
+	date INTEGER,
+	name VARCHAR(80)
+);
+
+DROP TABLE IF EXISTS develop_book;
+
+CREATE TABLE develop_book (
+	book_id NUMERIC(6),
+	date INTEGER,
+	name VARCHAR(80),
+	priceMoney
+);
+
+DROP TABLE IF EXISTS develop_book;
+
+CREATE TABLE develop_book (
+	book_id NUMERIC(6),
+	book_name VARCHAR(80),
+	pub_date INTEGER,
+	price MONEY
+);
